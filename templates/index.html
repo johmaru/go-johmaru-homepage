@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/public/styles.css" rel="stylesheet">
+  <title>Johmaru's Home Page</title>
+</head>
+<body class="bg-green">
+    <header class="bg-red p-2 w-full">
+        <div class="container">
+            <h1 class="text-3xl  text-left font-bold text-eme">Welcome to Johmaru's Home Page</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+  <noscript>
+    <meta http-equiv="refresh" content="0;url=/noscript-detected">
+    </noscript>
+  <script>
+
+    // Detect adblock
+    var ad = document.createElement('div');
+    ad.innerHTML = '&nbsp;';
+    ad.className = 'adsbox';
+    ad.style.display = 'none';
+    document.body.appendChild(ad);
+
+    window.setTimeout(function() {
+        if (ad.offsetHeight === 0) {
+            fetch('/adblock-detected', { method: 'POST' });
+        }
+        document.body.removeChild(ad);
+    },  100);
+   
+  </script>
+</body>
+</html>
